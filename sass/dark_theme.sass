@@ -1,0 +1,118 @@
+// Base
+$dark_base_bg: #000
+$dark_base_label_main: #fff
+$dark_base_label_secondary: #8D8D93
+$dark_base_label_tertiary: #454548
+$dark_base_label_quaternary: #2A2A2C
+$dark_base_shadow: 0px 0px 2px rgba(255, 255, 255, 0.12), 0px 2px 2px rgba(255, 255, 255, 0.24)
+
+// Elevated
+$dark_elevated_bg: #1C1C1E
+$dark_elevated_label_main: #fff
+$dark_elevated_label_secondary: #989899
+$dark_elevated_label_tertiary: #5A5A5E
+$dark_elevated_label_quaternary: #404044
+
+// Accent 
+$dark_accent_bg: #303030
+$dark_accent_border: #424242
+
+// Active
+$dark_active_label: #80CBC4
+$dark_active_bg: #099970
+
+.dark_theme
+  color: rgba(255, 255, 255, .7)
+  background: $dark_base_bg !important
+
+  ::-webkit-scrollbar-thumb
+    background: $dark_base_bg
+
+  h1, h2, h3
+    color: $dark_base_label_main
+  a
+    color: $dark_base_label_secondary !important
+  .ink
+      background: $dark_active_label
+  .header
+    background: $dark_elevated_bg !important
+    border-bottom: 1px solid #424242 !important
+    &__logo
+      img
+        filter: invert(1)
+    a
+      color: #fff !important
+    .cart__button_cart_icon
+      fill: #fff
+
+  .sidemenu
+    background-color: $dark_base_bg
+    border-right: 1px solid $dark_accent_border
+    .sidemenu__heading
+      background-color: #303030
+    .sidemenu__user-info__name
+      color: #fff
+    a
+      color: #fff
+    .nav__item.active, .nav__item:hover
+      background-color: rgba(0, 0, 0, 0.1)
+      a
+        color: #fff !important
+    .nav__icon
+      fill: #fff
+  .wrap, .container
+    background-color: $dark_base_bg
+
+
+  // Userinfo
+  .userinfo
+    .tabs__captions, .userinfo-l--second
+      border-bottom-color: $dark_accent_border
+    .userinfo__key
+      color: $dark_elevated_label_tertiary
+    .userinfo__val
+      color: $dark_elevated_label_secondary
+    .input-group__input
+      color: $dark_elevated_label_secondary
+    .userinfo-l-i:not(.tabs):hover
+      background: $dark_accent_bg
+    .tabs__captions li.active::after,
+    .input-group__input:focus ~ .input-line,
+    .input-group__input:valid:not(:placeholder-shown) ~ .input-line,
+    .input-group__input.active ~ .input-line,
+    .form__btn
+      background: $dark_active_bg
+    .input-group__input
+      border-bottom-color: $dark_accent_border
+
+  .input__search
+    background: rgb(66, 66, 66)
+    color: #fff
+    box-shadow: $dark_base_shadow
+
+  .input-line
+    background: #fff
+  .account-table__row
+    border-top: 1px solid rgb(66, 66, 66)
+  .account-table__row:hover
+    background: $dark_base_bg
+  // Charts
+  .charts__item
+    background: $dark_elevated_bg
+  // Main Chart
+  .apexcharts-gridline
+    stroke: rgb(66, 66, 66)
+  .apexcharts-text
+    fill: rgba(255, 255, 255, .7)
+  .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title,
+  .apexcharts-tooltip.apexcharts-theme-light
+    background: #333
+    border: 1px solid $dark_accent_border
+  .apexcharts-tooltip-y-group
+    color: rgba(255, 255, 255, .7)
+  // Pie Chart
+  .apexcharts-legend-text
+    color: rgba(255, 255, 255, .7) !important
+  .apexcharts-series.apexcharts-pie-series
+    path
+      stroke: rgb(66, 66, 66)

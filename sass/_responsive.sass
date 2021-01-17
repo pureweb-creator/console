@@ -1,0 +1,135 @@
+@media (max-width: 1200px)
+  .sidemenu
+    width: 71px
+  .nav__item
+    height: 48px
+    display: flex
+    align-items: center
+    justify-content: center
+  .nav__icon
+    width: 24px
+    margin: 0
+  .nav__link
+    padding: 0
+    margin-left: -4px
+  .nav__text
+    display: none
+  .container
+    width: calc(100% - 71px)
+  .charts__item:first-child,
+  .charts__item:nth-child(2)
+    grid-column: 1/3
+
+@media (max-width: 1024px)
+  .header
+    height: auto
+    &__right
+      width: calc(100% - 180px)
+    &__logo
+      margin-left: 0
+      width: 180px
+      background: transparent
+      a
+        color: #fff !important
+  .wrap
+    margin-top: 73.2px
+    min-height: calc(100vh - 73.200px)
+
+@media (max-width: 800px)
+  .charts
+    grid-template-columns: 1fr
+  .header__logo
+    width: 110px
+    margin-right: 20px
+  .header__right
+    width: calc(100% - 110px)
+
+@media (max-width: 600px)
+  h2
+    font-size: 15px
+  .userinfo__key
+    font-size: 12px
+  .userinfo__val
+    font-size: 14px
+  .header__right .header__right__title
+    padding-left: 20px
+    font-size: 18px
+  .wrap
+    margin-top: 10px !important
+  .charts
+    margin: 0 0 !important
+    grid-column-gap: 0
+    grid-row-gap: 15px
+
+  .charts__item,
+    grid-column: 1/2
+  .userinfo-l--second,
+  .spec-info
+    grid-template-columns: 1fr
+  .spec-info
+    padding-right: 10px
+    padding-left: 10px
+  .input-group
+    width: 100%
+  .account-table__row td:first-child,
+  .account-table__header td:first-child
+    padding-left: 0
+  .account-table,
+  #getCurrencyForm,
+  #getStatementForm
+    padding-left: 10px
+    padding-right: 10px
+
+
+@media (max-width: 600px)
+  .wrap
+    margin-top: 100px
+  .page
+    .header
+      padding-bottom: 0
+      &__right
+        width: 100%
+    .header__logo, .header__cart,
+      display: none
+    .header__search-wrap
+      display: block !important
+      .catalog__search
+        margin-bottom: 0
+      .catalog__search__button
+        top: 50%
+        transform: translateY(-50%)
+      .header__menu-button
+        left: 19px
+        span
+          background: #a8a8a8
+    .heading, .catalog__search, .settings
+      padding: 0 9px
+    .heading__subtitle
+      margin-bottom: 0
+    .account-table__row li:first-child, .account-table__header li:first-child
+      padding-left: 9px
+      .input-item
+        width: 100%
+    // Settings
+    .header
+      box-shadow: none
+      border-bottom: 1px solid #ccc
+      background: $main_color
+    .header-settings
+      .header__right
+        flex-direction: column
+      .catalog__left-input
+        margin-left: 0
+  .order-info__undertable
+    padding-left: 9px
+  .order-info__bottom
+    padding: 0 9px
+  // Dashboard
+  .charts
+    margin: 0 9px
+    &__item
+      padding-left: 0
+      padding-right: 0
+    &__title
+      padding-left: 10px
+      padding-right: 10px

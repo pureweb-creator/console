@@ -1,0 +1,537 @@
+$main_color: #1554F6
+$main_shadow: 0px 0px 2px rgba(0,0,0,0.12), 0px 2px 2px rgba(0,0,0,0.24)
+
+// #preloader
+// 	position: absolute
+// 	width: 100%
+// 	height: 100vh
+// 	background: rgb(48, 48, 48)
+// 	z-index: 9999
+// 	top: 0
+// 	opacity: 1
+// 	visibility: visible
+// 	transition: all .2s ease
+// .done
+// 	opacity: 0 !important
+// 	visibility: hidden !important
+
+body, h1, h2, h3, h4,p
+	margin: 0
+	padding: 0
+
+ul,li
+	list-style: none
+	padding: 0
+	margin: 0
+
+a
+	text-decoration: none
+
+.d-iflex
+	display: inline-flex
+
+button
+	padding: 0
+
+/* width */
+::-webkit-scrollbar
+  width: 5px !important
+
+/* Track */
+::-webkit-scrollbar-track
+	width: 5px !important
+  background-color: #f1f1f1
+
+
+/* Handle */
+::-webkit-scrollbar-thumb
+	background-color: #ccc
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: darken(#ccc, 10)
+
+// Material desing ripple clik effect
+.ink
+  display: block
+  position: absolute
+  background: rgba(255, 255, 255, 0.7)
+  border-radius: 100%
+  transform: scale(0)
+
+.animate
+  animation: ripple 0.45326s linear
+
+.ripple-effect
+	position: relative
+	overflow: hidden
+	transition: all 0.2s ease
+
+@keyframes ripple
+	100%
+		opacity: 0
+		transform: scale(2.5)
+
+h1, h2, h3, h4
+	font-weight: 500
+
+h2
+	font-size: 20px
+
+.burger
+	width: 71px
+	height: 71px
+	background: #fff
+	display: flex
+	align-items: center
+	justify-content: center
+	svg
+	  opacity: .54
+
+body.page
+	font-family: Roboto, sans-serif
+	font-size: 14px
+	font-weight: 400
+	background: #F0F4F5
+.heading
+	margin-bottom: 15px
+.heading__subtitle
+	font-size: 20px
+	font-weight: 500
+
+.header__logo
+	width: 256px
+	height: 100%
+	a
+		display: flex
+		align-items: center
+		justify-content: center
+		
+		img
+	      width: 100%
+	      height: 71px
+	      object-fit: cover
+.header
+	display: flex
+	align-items: center
+	position: fixed
+	z-index: 99
+	top: 0
+	justify-content: space-between
+	background: #3051D3
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.24)
+	width: 100%
+	padding-right: 50px
+	.header__icon
+		font-size: 25px
+	.header__icon--settings
+		transition: all .5s ease-in-out
+	.header__icon--notifications
+		transform-origin: top
+	.header__icon--notifications:hover
+		transform: rotate(0) scale(1.2)
+		animation-name: notifications-animation
+		animation-fill-mode: forwards
+		animation-timing-function: ease-in
+		animation-iteration-count: 1
+		animation-duration: .6s
+	.header__icon--settings:hover
+		transform: rotate(360deg)
+	.header__icon--cashout
+		transform-origin: bottom
+		animation-duration: 1.5s
+	.header__cashout:hover .header__icon--cashout
+		animation-name: cashout-animation
+	.header__menu-button
+		width: 18px
+		position: absolute
+	.header__search-wrap
+		display: none
+	a
+		color: #fff
+
+@keyframes notifications-animation
+	from
+		transform: rotate(0)
+	10%
+		transform: rotate(-15deg) scale(1.2)
+	20%
+		transform: rotate(15deg) scale(1.2)
+	30%
+		transform: rotate(-15deg) scale(1.2)
+	40%
+		transform: rotate(15deg) scale(1.2)
+	50%
+		transform: rotate(-15deg) scale(1.2)
+	60%
+		transform: rotate(15deg) scale(1.2)
+	70%
+		transform: rotate(-15deg) scale(1.2)
+	80%
+		transform: rotate(15deg) scale(1.2)
+	90%
+		transform: rotate(-15deg) scale(1.2)
+	100%
+		transform: rotate(0)
+
+@keyframes cashout-animation
+	0%
+		transform: scale(1,1) translateY(0)
+	10%
+		transform: scale(1.1,.9) translateY(0)
+	30%
+		transform: scale(.9,1.1) translateY(-10px)
+	50%
+		transform: scale(1.05,.95) translateY(0)
+	57%
+		transform: scale(1,1) translateY(-7px)
+	64%
+		transform: scale(1,1) translateY(0)
+	100%
+		transform: scale(1,1) translateY(0)
+
+.header__right
+	display: flex
+	align-items: center
+	width: calc(100% - 256px)
+	.header__right__title
+		color: #fff
+		padding-left: 50px
+
+.header__user
+	margin-right: 50px
+	.user-avatar
+			width: 50px
+	a
+		display: flex
+		align-items: center
+		font-size: 14px
+		font-weight: 700
+		img
+			margin-right: 20px
+
+.header__cashout.show
+	.header__cashout-hover
+		display: block
+
+	background-color: $main_color
+	color: #fff
+
+.modal-overlay, .page-overlay
+	width: 100vw
+	height: 100vh
+	position: fixed
+	z-index: 6
+	background: rgba(0, 0, 0, .5)
+	opacity: 0
+	visibility: hidden
+	transition: all .3s ease
+	&.active
+		opacity: 1
+		visibility: visible
+
+.page-overlay
+	z-index: 4
+
+.sidemenu
+	&::-webkit-scrollbar
+		display: none
+	background: #fff
+	box-shadow: 0px 28px 18px rgba(0, 0, 0, 0.18), 0px 5.5px 5px rgba(0, 0, 0, 0.24)
+	text-align: center
+	position: fixed
+	overflow-y: scroll
+	height: 100vh
+	left: 0
+	top: 71px
+	z-index: 5
+	font-family: Roboto, sans-serif
+	transition: all .3s ease
+	width: 256px
+	&.active
+		width: 256px
+		.nav__item
+			justify-content: flex-start
+			padding-left: 24px
+		.nav__icon
+			margin-right: 16px
+		.nav__text
+			display: block
+
+	&__heading
+		// background: #616161 url(../img/unnamed.jpg) no-repeat center center / cover
+		background-color: #fff
+		padding: 24px 0 21px 24px
+		display: none
+	&__avatar-box
+		width: 56px
+		height: 56px
+		background: #ccc
+		overflow: hidden
+		border-radius: 100px
+	&__avatar-image
+		width: 100%
+		height: 100%
+		object-fit: cover
+	&__user-info
+		margin-top: 23px
+		.sidemenu__user-info__name
+			text-align: left
+			margin-bottom: 5px
+			color: #fff
+		a
+			color: #fff
+			font-weight: 400
+			text-align: left
+
+@keyframes show
+	from
+		transform: translateX(100%)
+		opacity: 0
+		visibility: hidden
+	to
+		transform: translateX(0)
+		opacity: 1
+		visibility: visible
+
+@keyframes hide
+	from
+		transform: translateX(0)
+		opacity: 1
+		visibility: visible
+	to
+		transform: translateX(0)
+		opacity: 0
+		visibility: hidden
+
+.mobile-notifications
+	width: 100%
+	height: 100vh
+	overflow-y: scroll
+	background: #fff
+	position: fixed
+	top: 0
+	right: 0
+	opacity: 0
+	visibility: hidden
+	transition: all .3s ease
+	z-index: 5
+	&.show
+		animation: show .3s ease forwards
+	&.hide
+		animation: hide .3s ease forwards
+	.mobile-notifications__wrapper
+		padding: 16px 20px 0 20px
+	.mobile-notifications__heading
+		display: flex
+		align-items: center
+	.mobile-notifications__title
+		margin-left: 32.02px
+	.mobile-notifications-box
+		padding: 20px 0 0 0
+		&__item
+			position: relative
+			padding: 20px 0
+			border-bottom: 1px solid #ccc
+			justify-content: space-between
+			align-items: flex-end
+			.fa-times
+				position: absolute
+				right: 0
+				font-size: 18px
+				top: 10px
+			&_body
+				width: 70%
+			&_title
+				font-size: 16px
+				margin-bottom: 15px
+			&_aside
+				width: 50px
+				height: 50px
+				line-height: 50px
+				text-align: center
+				border-radius: 100px
+				background: $main_color
+			&_icon
+				font-size: 22px
+				color: #fff
+.nav
+	padding: 20px 0 0 0
+	&__item
+		transition: all .3s ease
+		position: relative
+		border-left: 4px solid transparent
+		&.active, &:hover
+			a
+				color: #4285F4
+				font-weight: 500
+			.nav__icon
+				fill: #4285F4
+				opacity: 1
+			border-left-color: #4285F4
+			background: #f4f4f4
+		&:hover
+			.nav__catalog
+				opacity: 1
+				visibility: visible
+	&__link
+		color: rgba(0, 0, 0, 0.87)
+		font-weight: 400
+		padding: 12px 0 12px 24px
+		display: flex
+		align-items: center
+	&__icon
+		margin-right: 32px
+		width: 24px
+		opacity: 0.54
+	&__caption
+		display: block
+	&__catalog
+		opacity: 0
+		visibility: hidden
+		transition: all .3s ease
+		position: absolute
+		top: 0
+		z-index: 2
+		left: calc(100% +  20px)
+		background: #fff
+		padding: 15px 0
+		box-shadow: 0 0 20px lighten(#000, 70)
+		border-radius: 15px
+	&__title
+		margin-bottom: 15px
+	&__item--second
+		&:hover
+			background: lighten(#000, 90)
+	&__link--second
+		color: #333
+		padding: 7px 35px
+
+.checkbox-swither
+	position: relative
+	margin-left: auto
+	margin-right: 24px
+	cursor: pointer
+	#theme-swither
+		display: none
+	#theme-swither:checked + .checkbox-swither__track
+		background: rgba(127, 202, 195, 0.5)
+	#theme-swither:checked + .checkbox-swither__track > .checkbox-swither__knob
+		background: #80CBC4
+		transform: translateX(20px)
+	&__track
+		background: rgba(34, 31, 31, .26)
+		width: 34px
+		height: 14px
+		border-radius: 100px
+		display: block
+		transition: all .1s ease
+
+	&__knob
+		position: absolute
+		top: -3px
+		left: -3px
+		transition: all .1s ease
+		display: block
+		border-radius: 100px
+		width: 20px
+		height: 20px
+		background: #F1F1F1
+		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24)
+
+.wrap
+	margin-top: 70px
+
+.container
+	width: calc(100% - 256px)
+	margin-left: auto
+	// background: #fff
+	background: #F0F4F5
+	min-height: calc(100vh - 84px)
+
+.account-table
+	text-align: left
+	border-spacing: 0
+	width: fit-content
+	cursor: pointer
+	overflow-x: auto
+	display: block
+	max-width: 100%
+	margin-bottom: 20px
+	table-layout: fixed
+
+.account-table__header
+	font-size: 16px
+	font-weight: 500
+	height: 30px
+	td
+		color: rgb(117, 117, 117)
+		font-size: 13px
+		font-weight: 500
+		padding: 0 10px
+		white-space: nowrap
+		overflow: hidden
+		&:first-child
+			padding-left: 50px
+
+.account-table__row
+	font-size: 14px
+	height: 30px
+	border-top: 1px solid rgb(224, 224, 224)
+	overflow: hidden
+	td
+		padding: 5px 10px
+		position: relative
+		white-space: nowrap	
+		overflow: hidden
+		&:first-child
+			padding-left: 50px
+			display: flex
+			align-items: center
+		&:nth-child(2)
+			img
+				margin-right: 8px
+				margin-bottom: -2px
+
+	&:hover
+		background: #ddd
+
+.heading
+	padding: 0 50px
+	padding-top: 50px
+
+.pagetitle
+	font-weight: 500
+	font-size: 24px
+	font-family: "Roboto", sans-serif
+	line-height: 23px
+	margin-bottom: 20px
+
+.top
+	justify-content: space-between
+	display: flex
+.settings__what
+	margin-bottom: 10px
+.top__date
+	font-size: 14px
+
+.subtop
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+.category__search
+	display: flex
+	justify-content: space-between
+	padding: 0 50px
+
+.catalog__search
+	display: grid
+	grid-template-columns: 1fr 1fr
+	padding: 0 50px
+	margin-bottom: 40px
+
+@import "dark_theme"
+@import "dashboard"
+@import "currency"
+@import "responsive"
