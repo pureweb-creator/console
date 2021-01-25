@@ -37,7 +37,7 @@ include "php/statement.php";
                       $i = 1;
                       foreach($key as $key2){
                         $j == 1 ? $class = "active" : $class = " "; $j++;
-                        echo '<li class="'.$class.'"><a href="#tab'.$i.'"> Карта '.$i.'</a></li>';
+                        echo '<li class="'.$class.' ripple-effect"><a href="#tab'.$i.'"> Карта '.$i.'</a></li>';
                         $i++;
                       }
                     };

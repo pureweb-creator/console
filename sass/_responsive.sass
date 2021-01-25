@@ -1,8 +1,24 @@
+@media (min-width: 1201px)
+  .page-overlay.active
+    opacity: 0
+    visibility: hidden
+
+  .sidemenu.active
+    width: 71px
+    .nav__item
+      // justify-content: flex-start
+      padding-left: 0px
+    .nav__text, .checkbox-swither
+      display: none
+    .nav__text
+      margin-right: 10px
+    .nav__icon
+      margin-right: 0px
+
 @media (max-width: 1200px)
   .sidemenu
     width: 71px
   .nav__item
-    height: 48px
     display: flex
     align-items: center
     justify-content: center
@@ -12,7 +28,8 @@
   .nav__link
     padding: 0
     margin-left: -4px
-  .nav__text
+    height: 48px
+  .nav__text, .checkbox-swither
     display: none
   .container
     width: calc(100% - 71px)
@@ -32,7 +49,7 @@
       a
         color: #fff !important
   .wrap
-    margin-top: 73.2px
+    margin-top: 56px
     min-height: calc(100vh - 73.200px)
 
 @media (max-width: 800px)

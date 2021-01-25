@@ -18,10 +18,10 @@ $dark_accent_bg: #303030
 $dark_accent_border: #424242
 
 // Active
-$dark_active_label: #80CBC4
-$dark_active_bg: #099970
+$dark_active_label: lighten(#3051D3, 20)
+$dark_active_bg: #3051D3
 
-.dark_theme
+body
   color: rgba(255, 255, 255, .7)
   background: $dark_base_bg !important
 
@@ -55,7 +55,7 @@ $dark_active_bg: #099970
     a
       color: #fff
     .nav__item.active, .nav__item:hover
-      background-color: rgba(0, 0, 0, 0.1)
+      background-color: rgba(255,255,255,.1)
       a
         color: #fff !important
     .nav__icon
@@ -66,6 +66,8 @@ $dark_active_bg: #099970
 
   // Userinfo
   .userinfo
+    .account-table
+      border-bottom-color: $dark_accent_border
     .tabs__captions, .userinfo-l--second
       border-bottom-color: $dark_accent_border
     .userinfo__key

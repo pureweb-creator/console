@@ -46,7 +46,7 @@ include "php/currency.php";
 	          			<thead class="account-table account-table__header">
 	          				<tr>
 		          				<td>Валюта</td>
-		          				<td>Национальная валюта</td>
+		          				<td>Нац.</td>
 		          				<td>Покупка</td>
 		          				<td>Продажа</td>
 		          				<td>Соотношение</td>

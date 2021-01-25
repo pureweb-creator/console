@@ -1,9 +1,32 @@
 $(document).ready(function () {
 
-  $('.burger').on('click', function () {
-    $('.sidemenu, .page-overlay').toggleClass('active');
-  });
+  // Save checkbox Theme switcher
+  function onClickBox() {
+    let checked=$("#theme-swither").is(":checked");
+    localStorage.setItem("checked", checked);
+  }
+  function onReady() {
+    let checked="true"==localStorage.getItem("checked");
+    $("#theme-swither").prop('checked', checked);
+    $("#theme-swither").click(onClickBox);
+  }
+  $(document).ready(onReady);
 
+  // Desktop side menu
+  // if( $(window).width() > 1199 ){
+  //   $('.burger').on('click', function () {
+  //     $('.container').toggleClass('active');
+  //   });
+  // }
+
+
+  if( $(window).width() < 1199 ){
+    $('.burger, .page-overlay').on('click', function () {
+      $('.sidemenu, .page-overlay').toggleClass('active');
+    });
+  }
+
+  // Ajax
   if( $('form').is('#getCurrencyForm') ){
     $('#loadCurrency').on('click', function(){
       $.ajax({
@@ -117,11 +140,13 @@ $(document).ready(function () {
   var links = document.querySelectorAll('.ripple-effect');
   for (var i = 0, len = links.length; i < len; i++) {
     links[i].addEventListener('click', function(e) {
+      e.stopPropagation;
       var targetEl = e.target;
-      var inkEl = targetEl.querySelector('.ink');
+      var inkEl = targetEl.querySelector('.ink'); 
 
       if (inkEl) {
         inkEl.classList.remove('animate');
+        inkEl.remove();
       }
       else {
         inkEl = document.createElement('span');
@@ -134,6 +159,10 @@ $(document).ready(function () {
       inkEl.style.top = (e.offsetY - inkEl.offsetHeight / 2) + 'px';
 
       inkEl.classList.add('animate');
+
+      setTimeout(function(){
+        $('.ink').remove();
+      }, 2000);
     }, false);
   }
 });

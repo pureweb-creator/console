@@ -1,19 +1,5 @@
-$main_color: #1554F6
+$main_color: #3051D3
 $main_shadow: 0px 0px 2px rgba(0,0,0,0.12), 0px 2px 2px rgba(0,0,0,0.24)
-
-// #preloader
-// 	position: absolute
-// 	width: 100%
-// 	height: 100vh
-// 	background: rgb(48, 48, 48)
-// 	z-index: 9999
-// 	top: 0
-// 	opacity: 1
-// 	visibility: visible
-// 	transition: all .2s ease
-// .done
-// 	opacity: 0 !important
-// 	visibility: hidden !important
 
 body, h1, h2, h3, h4,p
 	margin: 0
@@ -34,13 +20,14 @@ button
 	padding: 0
 
 /* width */
-::-webkit-scrollbar
-  width: 5px !important
+::-webkit-scrollbar	
+	height: 5px
+	width: 5px !important
 
 /* Track */
 ::-webkit-scrollbar-track
 	width: 5px !important
-  background-color: #f1f1f1
+  	background-color: #f1f1f1
 
 
 /* Handle */
@@ -55,17 +42,17 @@ button
 .ink
   display: block
   position: absolute
-  background: rgba(255, 255, 255, 0.7)
+  background: rgba(255, 255, 255, 0.9)
   border-radius: 100%
   transform: scale(0)
 
 .animate
-  animation: ripple 0.45326s linear
+  animation: ripple 500ms linear
 
 .ripple-effect
 	position: relative
 	overflow: hidden
-	transition: all 0.2s ease
+	transition: all 0.3s ease
 
 @keyframes ripple
 	100%
@@ -80,8 +67,8 @@ h2
 
 .burger
 	width: 71px
-	height: 71px
-	background: #fff
+	height: 56px
+	background: $main_color
 	display: flex
 	align-items: center
 	justify-content: center
@@ -118,7 +105,7 @@ body.page
 	z-index: 99
 	top: 0
 	justify-content: space-between
-	background: #3051D3
+	background: $main_color
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.24)
 	width: 100%
 	padding-right: 50px
@@ -196,7 +183,8 @@ body.page
 	width: calc(100% - 256px)
 	.header__right__title
 		color: #fff
-		padding-left: 50px
+		font-size: 20px
+		padding-left: 25px
 
 .header__user
 	margin-right: 50px
@@ -243,23 +231,23 @@ body.page
 	overflow-y: scroll
 	height: 100vh
 	left: 0
-	top: 71px
+	top: 56px
 	z-index: 5
 	font-family: Roboto, sans-serif
-	transition: all .3s ease
 	width: 256px
 	&.active
 		width: 256px
 		.nav__item
 			justify-content: flex-start
 			padding-left: 24px
-		.nav__icon
-			margin-right: 16px
-		.nav__text
+		.nav__text, .checkbox-swither
 			display: block
+		.nav__text
+			margin-right: 10px
+		.nav__icon
+			margin-right: 32px
 
 	&__heading
-		// background: #616161 url(../img/unnamed.jpg) no-repeat center center / cover
 		background-color: #fff
 		padding: 24px 0 21px 24px
 		display: none
@@ -440,14 +428,15 @@ body.page
 		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24)
 
 .wrap
-	margin-top: 70px
+	margin-top: 56px
 
 .container
 	width: calc(100% - 256px)
 	margin-left: auto
-	// background: #fff
 	background: #F0F4F5
 	min-height: calc(100vh - 84px)
+.container.active
+    width: calc(100% - 71px)
 
 .account-table
 	text-align: left
@@ -531,7 +520,6 @@ body.page
 	padding: 0 50px
 	margin-bottom: 40px
 
-@import "dark_theme"
 @import "dashboard"
 @import "currency"
 @import "responsive"
